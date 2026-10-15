@@ -1,0 +1,58 @@
+{
+  "name": "dsh-active-sessions",
+  "version": "0.0.1",
+  "description": "Sidebar tab listing running and completed-unread sessions across projects, with click-to-switch and grouping.",
+  "private": true,
+  "type": "module",
+  "main": "./lib/index.js",
+  "files": [
+    "lib"
+  ],
+  "license": "MIT",
+  "scripts": {
+    "build": "bash scripts/build.sh",
+    "build:client": "bash scripts/build.sh"
+  },
+  "exports": {
+    ".": {
+      "default": "./lib/index.js"
+    },
+    "./client": {
+      "default": "./lib/client.js"
+    },
+    "./package.json": "./package.json"
+  },
+  "dsh": {
+    "client": {
+      "inject": [
+        "@deepseek-ai/dsh-client-runtime",
+        "@deepseek-ai/dsh-client-locale",
+        "@deepseek-ai/dsh-api-session-controller",
+        "@deepseek-ai/dsh-client-ui-session",
+        "@deepseek-ai/dsh-client-ui-workspace",
+        "@deepseek-ai/dsh-api-workspace-controller"
+      ],
+      "platform": "web"
+    },
+    "bundle": {
+      "patch": "./cordis.patch.yml"
+    }
+  },
+  "author": "r-ayin",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/r-ayin/dsh-active-sessions.git"
+  },
+  "homepage": "https://github.com/r-ayin/dsh-active-sessions#readme",
+  "bugs": {
+    "url": "https://github.com/r-ayin/dsh-active-sessions/issues"
+  },
+  "keywords": [
+    "dsh",
+    "dsh-plugin",
+    "deepseek-harness"
+  ],
+  "engines": {
+    "node": ">=20"
+  }
+}
