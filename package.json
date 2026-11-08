@@ -1,6 +1,6 @@
 {
   "name": "dsh-active-sessions",
-  "version": "0.0.1",
+  "version": "0.0.2",
   "description": "Sidebar tab listing running and completed-unread sessions across projects, with click-to-switch and grouping.",
   "private": true,
   "type": "module",
